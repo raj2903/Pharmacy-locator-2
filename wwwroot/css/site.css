@@ -1,0 +1,177 @@
+:root {
+    --primary: #1559b7;
+    --light: #f5f7fa;
+    --border: #d7dde5;
+    --text: #1f2d3d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--light);
+}
+
+.page-header {
+    background: linear-gradient(135deg, #1f8ef1, #1559b7);
+    color: white;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.page-header h1 {
+    margin: 0 0 0.25rem;
+}
+
+.form-section {
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+}
+
+.form-row.inline {
+    flex-direction: row;
+    gap: 0.75rem;
+    align-items: flex-end;
+}
+
+.form-row label {
+    font-weight: bold;
+    margin-bottom: 0.35rem;
+}
+
+.form-row input,
+.form-row select {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.button-wrapper {
+    align-self: flex-end;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.65rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #0f3d80;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    margin: 0 1rem 1rem;
+    min-height: 60vh;
+}
+
+#map {
+    height: 70vh;
+    min-height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.sidebar {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar h2 {
+    margin: 0;
+}
+
+#pharmacyList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    flex: 1;
+}
+
+#pharmacyList li {
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+#pharmacyList li:hover {
+    background: #f2f6ff;
+}
+
+.result-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.result-address,
+.result-distance,
+.result-phone {
+    margin: 0.15rem 0;
+    color: #4b5563;
+}
+
+.result-link {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.message {
+    color: #c0392b;
+    min-height: 1.25rem;
+}
+
+.loading {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    #map {
+        height: 50vh;
+    }
+}
